@@ -1,5 +1,7 @@
 package com.costa.challengeMatriz.service;
 
+
+
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
@@ -61,13 +63,19 @@ public class AMethods  implements Methods{
     }
     @Override
     public int min(int[][] x){
-        int[][] max = x;
-        return Arrays.stream(x).flatMapToInt(IntStream::of).min().getAsInt();
+        return Arrays.stream(x)
+                .flatMapToInt(IntStream::of)
+                .min()
+                .getAsInt();
     }
     @Override
     public int max(int[][] x){
-        int[][] max = x;
-        return Arrays.stream(x).flatMapToInt(IntStream::of).max().getAsInt();
+
+        return Arrays
+                .stream(x)
+                .flatMapToInt(IntStream::of)
+                .max()
+                .getAsInt();
     }
 
 }

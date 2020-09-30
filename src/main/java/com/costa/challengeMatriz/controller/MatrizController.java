@@ -20,12 +20,7 @@ public class MatrizController {
     public String ping(){
         return "pong";
     }
-   /* @PostMapping(value = "/matriz" , consumes = "application/json")
-    public List<Matriz> matriz(@RequestBody List<Matriz> list){
-       prueba = new ArrayList<>();
-        prueba.addAll(list);
-        return prueba;
-    }*/
+
     @PostMapping(value = "lista", consumes = "application/json")
     public ReturnsMatriz lista (@RequestBody int[][] matriz){
         ReturnsMatriz retorno = new ReturnsMatriz();
