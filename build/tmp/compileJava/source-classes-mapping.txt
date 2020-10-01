@@ -8,5 +8,3 @@ com/costa/challengeMatriz/controller/MatrizController.java
  com.costa.challengeMatriz.controller.MatrizController
 com/costa/challengeMatriz/ChallengeMatrizApplication.java
  com.costa.challengeMatriz.ChallengeMatrizApplication
-com/costa/challengeMatriz/returns/Cuentas.java
- com.costa.challengeMatriz.returns.Cuentas

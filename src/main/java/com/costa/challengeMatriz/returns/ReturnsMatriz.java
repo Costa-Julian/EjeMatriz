@@ -1,19 +1,13 @@
 package com.costa.challengeMatriz.returns;
 
 
-
-
-
 public class ReturnsMatriz  {
 
     public int valorMaximo;
     public int valorMinimo;
     public int[][] orden;
 
-
-
     public ReturnsMatriz(){}
-
     public ReturnsMatriz(int valorMaximo, int valorMinimo, int[][] orden) {
         this.valorMaximo = valorMaximo;
         this.valorMinimo = valorMinimo;
@@ -43,15 +37,4 @@ public class ReturnsMatriz  {
     public void setOrden(int[][] orden) {
         this.orden = orden;
     }
-
-    @Override
-    public String toString() {
-        return "ReturnsMatriz{" +
-                "valorMaximo=" + valorMaximo +
-                ", valorMinimo=" + valorMinimo +
-                ", orden=" + orden +
-                '}';
-    }
-
-
 }

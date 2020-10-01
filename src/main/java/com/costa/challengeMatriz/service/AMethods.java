@@ -5,8 +5,8 @@ package com.costa.challengeMatriz.service;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-public class AMethods  implements Methods{
-    @Override
+public class AMethods{
+
     public int[][] ordenar(int[][] matriz) {
 
         int row = matriz.length;
@@ -37,7 +37,7 @@ public class AMethods  implements Methods{
         return matriz;
     }
 
-    @Override
+
     public Integer maximo(Integer[][] matriz){
         Integer num = Integer.MIN_VALUE;
         for (int i = 0; i < matriz.length; i++){
@@ -49,7 +49,7 @@ public class AMethods  implements Methods{
         }
         return num;
     }
-    @Override
+
     public Integer minimo(int[][] matriz){
         Integer num = Integer.MAX_VALUE;
         for (int i = 0; i < matriz.length; i++){
@@ -61,14 +61,14 @@ public class AMethods  implements Methods{
         }
         return num;
     }
-    @Override
+
     public int min(int[][] x){
         return Arrays.stream(x)
                 .flatMapToInt(IntStream::of)
                 .min()
                 .getAsInt();
     }
-    @Override
+
     public int max(int[][] x){
 
         return Arrays

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.costa.challengeMatriz.returns.CuentasTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-09-30T19:07:09" hostname="JulianHome" time="0.016">
-  <properties/>
-  <testcase name="suma()" classname="com.costa.challengeMatriz.returns.CuentasTest" time="0.015"/>
-  <testcase name="resta()" classname="com.costa.challengeMatriz.returns.CuentasTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
