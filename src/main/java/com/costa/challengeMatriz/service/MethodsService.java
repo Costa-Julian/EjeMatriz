@@ -2,10 +2,13 @@ package com.costa.challengeMatriz.service;
 
 
 
+import org.springframework.stereotype.Service;
+
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-public class AMethods{
+@Service
+public class MethodsService {
 
     public int[][] ordenar(int[][] matriz) {
 
@@ -37,7 +40,7 @@ public class AMethods{
         return matriz;
     }
 
-
+    @Deprecated
     public Integer maximo(Integer[][] matriz){
         Integer num = Integer.MIN_VALUE;
         for (int i = 0; i < matriz.length; i++){
@@ -49,7 +52,7 @@ public class AMethods{
         }
         return num;
     }
-
+    @Deprecated
     public Integer minimo(int[][] matriz){
         Integer num = Integer.MAX_VALUE;
         for (int i = 0; i < matriz.length; i++){
