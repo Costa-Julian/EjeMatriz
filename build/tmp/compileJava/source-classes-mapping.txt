@@ -2,9 +2,9 @@ com/costa/challengeMatriz/returns/ReturnsMatriz.java
  com.costa.challengeMatriz.returns.ReturnsMatriz
 com/costa/challengeMatriz/service/Methods.java
  com.costa.challengeMatriz.service.Methods
-com/costa/challengeMatriz/service/AMethods.java
- com.costa.challengeMatriz.service.AMethods
 com/costa/challengeMatriz/controller/MatrizController.java
  com.costa.challengeMatriz.controller.MatrizController
+com/costa/challengeMatriz/service/MethodsService.java
+ com.costa.challengeMatriz.service.MethodsService
 com/costa/challengeMatriz/ChallengeMatrizApplication.java
  com.costa.challengeMatriz.ChallengeMatrizApplication

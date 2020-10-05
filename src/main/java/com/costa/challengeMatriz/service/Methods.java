@@ -7,4 +7,5 @@ public interface Methods {
      Integer minimo(int[][] matriz);
      int min(int[][] x);
      int max(int[][] x);
+     public boolean existeLineal(int lista[][], int vector[]);
 }

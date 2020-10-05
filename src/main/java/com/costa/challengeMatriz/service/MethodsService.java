@@ -10,15 +10,17 @@ import java.util.stream.IntStream;
 @Service
 public class MethodsService {
 
+
+
     public int[][] ordenar(int[][] matriz) {
 
         int row = matriz.length;
         int col = matriz[0].length;
         int totalCount = row * col;
 
-        boolean noSwaps = false;
-        for (int i = 0; !noSwaps; i++) {
-            noSwaps = true;
+        boolean band = false;
+        for (int i = 0; !band; i++) {
+            band = true;
 
             for (int j = 1; j < totalCount - i; j++) {
                 int currentRow = (j - 1) / col;
@@ -32,7 +34,7 @@ public class MethodsService {
                     matriz[nextRow][nextOffset] = matriz[currentRow][currentOffset];
                     matriz[currentRow][currentOffset] = temp;
 
-                    noSwaps = false;
+                    band = false;
                 }
             }
         }
@@ -79,6 +81,85 @@ public class MethodsService {
                 .flatMapToInt(IntStream::of)
                 .max()
                 .getAsInt();
+    }
+
+
+    public boolean existeLineal(int lista[][], int[] vector){
+        boolean band = false;
+        try {
+            for (int filas = 0; filas < lista.length; filas++) {
+                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
+                    if (
+                            (band == false) && (lista[filas][columnas] == vector[0])
+                                    && (lista[filas][columnas + 1] == vector[1])
+                                    && (lista[filas][columnas + 2] == vector[2])
+                                    && (lista[filas][columnas + 3] == vector[3])){
+
+                        band = true;}
+                }
+            }
+        }catch(ArrayIndexOutOfBoundsException ex){
+            band = false;
+        }
+        return band;
+    }
+    public boolean existeVertical(int lista[][], int[] vector ){
+        boolean band = false;
+        try {
+            for (int filas = 0; filas < lista.length; filas++) {
+                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
+                    if (
+                            (band == false) && (lista[filas][columnas] == vector[0])
+                                    && (lista[filas + 1][columnas] == vector[1])
+                                    && (lista[filas + 2 ][columnas] == vector[2])
+                                    && (lista[filas + 3][columnas] == vector[3])){
+                        band = true;}
+                }
+            }
+        }catch(ArrayIndexOutOfBoundsException ex){
+            band = false;
+        }
+        return band;
+
+    }
+
+    public boolean diagonalIzquierda(int lista[][], int[] vector) {
+        int[] listado = vector;
+        boolean band = false;
+        try {
+            for (int filas = 0; filas < lista.length; filas++) {
+                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
+                    if (
+                            (band == false) && (lista[filas][columnas] == vector[0])
+                                    && (lista[filas + 1][columnas +1] == vector[1])
+                                    && (lista[filas + 2 ][columnas +2] == vector[2])
+                                    && (lista[filas + 3][columnas + 3] == vector[3]))
+                        band = true;
+                }
+            }
+        }catch(ArrayIndexOutOfBoundsException ex){
+            band = false;
+        }
+        return band;
+    }
+
+    public boolean diagonalDerecha(int lista[][], int[] vector) {
+        boolean band = false;
+        try {
+            for (int filas = 0; filas < lista.length; filas++) {
+                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
+                    if ((band == false) && (lista[filas][columnas + 3] == vector[0])
+                            && (lista[filas + 1][columnas + 2] == vector[1])
+                            && (lista[filas + 2][columnas + 1] == vector[2])
+                            && (lista[filas + 3][columnas] == vector[3]))
+                        band = true;
+                }
+            }
+        }catch(ArrayIndexOutOfBoundsException ex){
+            band = false;
+        }
+
+        return band;
     }
 
 }

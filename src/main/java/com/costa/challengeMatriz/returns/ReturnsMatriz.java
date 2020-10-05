@@ -5,18 +5,21 @@ public class ReturnsMatriz  {
 
     public int valorMaximo;
     public int valorMinimo;
-    public int[][] orden;
-
     public Boolean ejercicioA;
     public Boolean ejercicioB;
     public Boolean ejercicioC;
     public Boolean ejercicioD;
+    public int[][] orden;
 
     public ReturnsMatriz(){}
 
-    public ReturnsMatriz(int valorMaximo, int valorMinimo, int[][] orden) {
+    public ReturnsMatriz(int valorMaximo, int valorMinimo, Boolean ejercicioA, Boolean ejercicioB, Boolean ejercicioC, Boolean ejercicioD, int[][] orden) {
         this.valorMaximo = valorMaximo;
         this.valorMinimo = valorMinimo;
+        this.ejercicioA = ejercicioA;
+        this.ejercicioB = ejercicioB;
+        this.ejercicioC = ejercicioC;
+        this.ejercicioD = ejercicioD;
         this.orden = orden;
     }
 

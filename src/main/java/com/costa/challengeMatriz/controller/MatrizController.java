@@ -22,16 +22,11 @@ public class MatrizController {
 
     @PostMapping(value = "lista", consumes = "application/json")
     public ReturnsMatriz lista (@RequestBody int[][] matriz){
-        return new ReturnsMatriz(metodos.max(matriz), metodos.min(matriz), metodos.ordenar(matriz));
+        int[] vector = {12,25,37,41};
+        return new ReturnsMatriz(metodos.max(matriz), metodos.min(matriz),metodos.existeLineal(matriz, vector),
+                metodos.existeVertical(matriz,vector),metodos.diagonalIzquierda(matriz,vector),
+                metodos.diagonalDerecha(matriz,vector),metodos.ordenar(matriz));
     }
 
 
-  @PostMapping(value = "prueba1", consumes = "application/json")
-  public String lista (@RequestBody String variable){
-     return "{\"content\":\"" + metodo1(variable) + "\"}";
-  }
-
-  public Boolean metodo1(String variable){
-      return variable.equals("hola mundo");
-  }
 }
