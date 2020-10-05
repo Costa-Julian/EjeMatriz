@@ -8,6 +8,7 @@ public class ReturnsMatriz  {
     public int[][] orden;
 
     public ReturnsMatriz(){}
+
     public ReturnsMatriz(int valorMaximo, int valorMinimo, int[][] orden) {
         this.valorMaximo = valorMaximo;
         this.valorMinimo = valorMinimo;
