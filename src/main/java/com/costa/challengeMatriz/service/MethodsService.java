@@ -14,19 +14,19 @@ public class MethodsService {
 
     public int[][] ordenar(int[][] matriz) {
 
-        int row = matriz.length;
-        int col = matriz[0].length;
-        int totalCount = row * col;
+        int fila = matriz.length;
+        int colum = matriz[0].length;
+        int totalCount = fila * colum;
 
         boolean band = false;
         for (int i = 0; !band; i++) {
             band = true;
 
             for (int j = 1; j < totalCount - i; j++) {
-                int currentRow = (j - 1) / col;
-                int currentOffset = (j - 1) % col;
-                int nextRow = j / col;
-                int nextOffset = j % col;
+                int currentRow = (j - 1) / colum;
+                int currentOffset = (j - 1) % colum;
+                int nextRow = j / colum;
+                int nextOffset = j % colum;
 
                 if (matriz[currentRow][currentOffset] > matriz[nextRow][nextOffset]) {
 
