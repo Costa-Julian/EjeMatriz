@@ -42,30 +42,7 @@ public class MethodsService {
         return matriz;
     }
 
-    @Deprecated
-    public Integer maximo(Integer[][] matriz){
-        Integer num = Integer.MIN_VALUE;
-        for (int i = 0; i < matriz.length; i++){
-            for (int j = 0; j< matriz[i].length; j++){
-                if ( matriz[i][j] > num){
-                    num = matriz[i][j];
-                }
-            }
-        }
-        return num;
-    }
-    @Deprecated
-    public Integer minimo(int[][] matriz){
-        Integer num = Integer.MAX_VALUE;
-        for (int i = 0; i < matriz.length; i++){
-            for (int j = 0; j< matriz[i].length; j++){
-                if ( matriz[i][j] < num){
-                    num = matriz[i][j];
-                }
-            }
-        }
-        return num;
-    }
+
 
     public int min(int[][] x){
         return Arrays.stream(x)
@@ -84,82 +61,43 @@ public class MethodsService {
     }
 
 
-    public boolean existeLineal(int lista[][], int[] vector){
-        boolean band = false;
-        try {
-            for (int filas = 0; filas < lista.length; filas++) {
-                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
-                    if (
-                            (band == false) && (lista[filas][columnas] == vector[0])
-                                    && (lista[filas][columnas + 1] == vector[1])
-                                    && (lista[filas][columnas + 2] == vector[2])
-                                    && (lista[filas][columnas + 3] == vector[3])){
-
-                        band = true;}
+    public String busqueda(int lista[][], int[] vector){
+        String resultado = "No encontrado";
+        int filas = 0;
+        while (filas < lista.length ) {
+            int columnas = 0;
+            while (columnas < lista[filas].length) {
+                if (columnas + 3 < lista[filas].length &&
+                        lista[filas][columnas] == vector[0] &&
+                        lista[filas][columnas + 1] == vector[1] &&
+                        lista[filas][columnas + 2] == vector[2] &&
+                        lista[filas][columnas + 3] == vector[3])
+                    resultado = "lineal";
+                else if(filas + 3 < lista.length &&
+                        lista[filas][columnas] == vector[0] &&
+                        lista[filas + 1][columnas] == vector[1] &&
+                        lista[filas + 2 ][columnas] == vector[2] &&
+                        lista[filas + 3][columnas] == vector[3]){
+                    resultado = "vertical";
+                }else if(filas + 3 <lista.length && columnas + 3 <lista[filas].length &&
+                        lista[filas][columnas] == vector[0] &&
+                        lista[filas + 1][columnas +1] == vector[1] &&
+                        lista[filas + 2 ][columnas +2] == vector[2] &&
+                        lista[filas + 3][columnas + 3] == vector[3]){
+                    resultado = "diagonal izq-der";
+                }else if (filas + 3 <lista.length && columnas + 3 <lista[filas].length &&
+                        lista[filas][columnas + 3] == vector[0] &&
+                        lista[filas + 1][columnas + 2] == vector[1] &&
+                        lista[filas + 2][columnas + 1] == vector[2] &&
+                        lista[filas + 3][columnas] == vector[3]){
+                    resultado = "diagonal der-izq";
                 }
+                columnas++;
             }
-        }catch(ArrayIndexOutOfBoundsException ex){
-            band = false;
+            filas++;
         }
-        return band;
-    }
-    public boolean existeVertical(int lista[][], int[] vector ){
-        boolean band = false;
-        try {
-            for (int filas = 0; filas < lista.length; filas++) {
-                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
-                    if (
-                            (band == false) && (lista[filas][columnas] == vector[0])
-                                    && (lista[filas + 1][columnas] == vector[1])
-                                    && (lista[filas + 2 ][columnas] == vector[2])
-                                    && (lista[filas + 3][columnas] == vector[3])){
-                        band = true;}
-                }
-            }
-        }catch(ArrayIndexOutOfBoundsException ex){
-            band = false;
-        }
-        return band;
-
-    }
-
-    public boolean diagonalIzquierda(int lista[][], int[] vector) {
-        int[] listado = vector;
-        boolean band = false;
-        try {
-            for (int filas = 0; filas < lista.length; filas++) {
-                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
-                    if (
-                            (band == false) && (lista[filas][columnas] == vector[0])
-                                    && (lista[filas + 1][columnas +1] == vector[1])
-                                    && (lista[filas + 2 ][columnas +2] == vector[2])
-                                    && (lista[filas + 3][columnas + 3] == vector[3]))
-                        band = true;
-                }
-            }
-        }catch(ArrayIndexOutOfBoundsException ex){
-            band = false;
-        }
-        return band;
+        return "encontradas: " + resultado;
     }
 
-    public boolean diagonalDerecha(int lista[][], int[] vector) {
-        boolean band = false;
-        try {
-            for (int filas = 0; filas < lista.length; filas++) {
-                for (int columnas = 0; columnas < lista[filas].length; columnas++) {
-                    if ((band == false) && (lista[filas][columnas + 3] == vector[0])
-                            && (lista[filas + 1][columnas + 2] == vector[1])
-                            && (lista[filas + 2][columnas + 1] == vector[2])
-                            && (lista[filas + 3][columnas] == vector[3]))
-                        band = true;
-                }
-            }
-        }catch(ArrayIndexOutOfBoundsException ex){
-            band = false;
-        }
-
-        return band;
-    }
 
 }
